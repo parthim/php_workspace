@@ -11,7 +11,7 @@
 <body>
     <h1>Employee details:</h1>
     <div class="employeeDetails">
-        <table class="employeeTable">
+        <table id="employeeTable">
             <thead>
                 <tr>
                     <th>Employee Number</th>
@@ -47,19 +47,5 @@
 
     <!-- JavaScript Section -->
     <script language ="javascript" src="Assets/js/main.js"></script>
-    <script language ="javascript">
-        $.ajax({
-            type:"GET", 
-            url: "http://localhost/php_workspace/customerQuery.php", 
-            success: function(data) {
-                    $("#customerData").append("Hello");
-                    alert("HEllo");
-                }, 
-            error: function(jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.status);
-                },
-        dataType: "jsonp"
-        });​​​​​​​​​​​​​​​
-    </script>
 </body>
 </html>

@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 // Query to select the required Fields from Database
-$query = "SELECT DISTINCT customers.customerName,customers.customerNumber AS FullName
+$query = "SELECT DISTINCT customers.customerName,customers.customerNumber
 FROM customers INNER JOIN payments
 WHERE customers.customerNumber = payments.customerNumber";
 
