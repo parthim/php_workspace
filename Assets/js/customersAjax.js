@@ -1,13 +1,11 @@
+$.get("http://localhost/php_workspace/customerQuery.php",function(data,status){
+    let row ='';
 
-$.ajax({
-    type:"GET", 
-    url: "http://localhost/php_workspace/customerQuery.php", 
-    success: function(data) {
-            // $("#customerData").html("<tr><td>"+data.customerNumber+"</td><td>"+data.customerName+"</td><td>"+data.totalAmount+"</td></tr>");
-            console.log(data);                
-        }, 
-    error: function(jqXHR, textStatus, errorThrown) {
-            alert(jqXHR.status);
-        },
-dataType: "jsonp"
-})​​​​​​​​​​​
+$.each(data,function(item,value){
+        row += "<tr><td>"+value.customerNumber+"</td><td>"+value.customerName+"</td><td>"+value.totalAmount+"</td></tr>"
+    });
+    $("#customerData").html(row);
+}) .fail(function(a,b,c){
+    console.log("Invalid Url");
+    console.log(a,b,c);
+});

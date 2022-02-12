@@ -9,8 +9,8 @@
     <title>Database operations</title>
 </head>
 <body>
-    <h1>Employee details:</h1>
     <div class="employeeDetails">
+        <h1>Employee details:</h1>
         <table id="employeeTable">
             <thead>
                 <tr>
@@ -28,9 +28,8 @@
             </tbody>
         </table>
     </div>
-
-    <h1>Customers and their payments:</h1>
     <div class="customerDetails">
+        <h1>Customers and their payments:</h1>
         <table class="customerTable">
             <thead>
                 <tr>
@@ -47,5 +46,6 @@
 
     <!-- JavaScript Section -->
     <script language ="javascript" src="Assets/js/main.js"></script>
+    <script language ="javascript" src="Assets/js/customersAjax.js"></script>
 </body>
 </html>

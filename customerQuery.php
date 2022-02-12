@@ -17,9 +17,10 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 // Query to select the required Fields from Database
-$query = "SELECT DISTINCT customers.customerName,customers.customerNumber
+$query = "SELECT DISTINCT customers.customerName,customers.customerNumber,SUM(payments.amount) AS totalAmount
 FROM customers INNER JOIN payments
-WHERE customers.customerNumber = payments.customerNumber";
+WHERE customers.customerNumber = payments.customerNumber
+GROUP BY payments.customerNumber LIMIT 10";
 
 $result = mysqli_query($conn,$query);
 $data=[];
