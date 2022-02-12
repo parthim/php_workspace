@@ -1,0 +1,22 @@
+.employeeTable {
+  border: 2px solid #000;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employeeTable tr, .employeeTable td, .employeeTable th {
+  border: 2px solid #000;
+  padding: 5px;
+}
+
+.customerTable {
+  border: 2px solid #000;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customerTable tr, .customerTable td, .customerTable th {
+  border: 2px solid #000;
+  padding: 5px;
+}
+/*# sourceMappingURL=main.css.map */
