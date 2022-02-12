@@ -29,7 +29,7 @@
         </table>
     </div>
 
-    <!-- <h1>Customers and their payments:</h1>
+    <h1>Customers and their payments:</h1>
     <div class="customerDetails">
         <table class="customerTable">
             <thead>
@@ -43,11 +43,10 @@
             </tbody>
 
         </table>
-    </div> -->
+    </div>
 
     <!-- JavaScript Section -->
-    <script language ="javascript" src="Assets/js/main.js">
-    </script>
+    <script language ="javascript" src="Assets/js/main.js"></script>
     <script language ="javascript">
         $.ajax({
             type:"GET", 
