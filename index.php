@@ -43,6 +43,21 @@
 
         </table>
     </div>
+    <div class="ordersDetails">
+        <h1>Order details and amount:</h1>
+        <table class="ordersTable">
+            <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>Customer Name</th>
+                    <th>Full Amount</th>
+                </tr>
+            </thead>
+            <tbody id="ordersData">
+            </tbody>
+
+        </table>
+    </div>
 
     <!-- JavaScript Section -->
     <script language ="javascript" src="Assets/js/main.js"></script>
