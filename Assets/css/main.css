@@ -30,5 +30,6 @@
 .ordersTable tr, .ordersTable td, .ordersTable th {
   border: 2px solid #000;
   padding: 5px;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

@@ -17,9 +17,9 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 // Query to select the required Fields from Database
-$query = "SELECT DISTINCT customers.customerName,orders.orderNumber
+$query = "SELECT DISTINCT customers.customerName,orders.orderNumber,orders.status
 FROM customers INNER JOIN orders
-WHERE customers.customerNumber = orders.customerNumber
+WHERE customers.customerNumber = orders.customerNumber AND orders.status NOT LIKE '%Shipped%'
 GROUP BY orders.orderNumber LIMIT 10";
 
 $result = mysqli_query($conn,$query);

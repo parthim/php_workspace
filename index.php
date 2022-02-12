@@ -50,6 +50,7 @@
                 <tr>
                     <th>Order Number</th>
                     <th>Customer Name</th>
+                    <th>Status</th>
                     <th>Full Amount</th>
                 </tr>
             </thead>
@@ -62,5 +63,6 @@
     <!-- JavaScript Section -->
     <script language ="javascript" src="Assets/js/main.js"></script>
     <script language ="javascript" src="Assets/js/customersAjax.js"></script>
+    <script language ="javascript" src="Assets/js/ordersAjax.js"></script>
 </body>
 </html>
