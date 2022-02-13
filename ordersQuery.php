@@ -17,14 +17,16 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 // Query to select the required Fields from Database
-$query = "SELECT DISTINCT customers.customerName,b.orderNumber,b.status,b.totalAmount
-FROM customers INNER JOIN (SELECT orders.orderNumber,orders.customerNumber,orders.status,SUM(orderDetails.priceEach) AS totalAmount
-FROM orders INNER JOIN orderDetails
-WHERE orders.orderNumber = orderDetails.orderNumber
-GROUP BY orderDetails.orderNumber 
-) AS b
-WHERE customers.customerNumber = b.customerNumber  AND b.status NOT LIKE '%Shipped'
-ORDER BY `b`.`orderNumber` ASC LIMIT 10";
+$query = "SELECT
+C.customerName, O.orderNumber,O.status,sum(OD.priceEach) As totalAmount
+FROM customers C JOIN orders O
+on C.customerNumber=O.customerNumber
+JOIN 
+orderDetails OD 
+on O.orderNumber=OD.orderNumber
+WHERE lower(o.status) not like '%shipped%'  
+GROUP BY O.orderNumber
+ORDER BY `O`.`orderNumber`  ASC LIMIT 10";
 
 $result = mysqli_query($conn,$query);
 $data=[];
