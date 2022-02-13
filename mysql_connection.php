@@ -17,9 +17,20 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 // Query to select the required Fields from Database
-$query = "SELECT `employeeNumber`,`lastName`,`firstName`,`jobTitle`,`city`,`phone`,`email`,`extension`,`reportsTo`
-FROM employees JOIN offices 
-USING(officeCode) limit 10";
+$query = "SELECT a.employeeNumber,a.firstName,a.lastName,a.jobTitle,offices.city,offices.phone,a.email,a.extension,a.reportToFirstName,a.reportToLastName
+FROM offices INNER JOIN(SELECT emp.firstName AS reportToFirstName,
+                        emp.lastName AS reportToLastName,
+       					reportTo.employeeNumber,
+                        reportTo.firstName,
+                        reportTo.lastName,
+                        reportTo.jobTitle,
+                        reportTo.extension,
+                        reportTo.email,
+                        reportTo.officeCode
+                        FROM employees AS emp
+                        JOIN employees AS reportTo 
+                        ON reportTo.reportsTo = emp.employeeNumber) AS a
+WHERE offices.officeCode = a.officeCode LIMIT 10";
 
 $result = mysqli_query($conn,$query);
 $data=[];
