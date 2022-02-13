@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 $query = "SELECT a.employeeNumber,a.firstName,a.lastName,a.jobTitle,offices.city,offices.phone,a.email,a.extension,a.reportToFirstName,a.reportToLastName
 FROM offices INNER JOIN(SELECT emp.firstName AS reportToFirstName,
                         emp.lastName AS reportToLastName,
-       					reportTo.employeeNumber,
+       				        	reportTo.employeeNumber,
                         reportTo.firstName,
                         reportTo.lastName,
                         reportTo.jobTitle,
